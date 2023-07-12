@@ -47,8 +47,8 @@ def aes_encryption(image):
     def shift_element_rows(position):
         # Replace this with shift_element_rows() implementation
         return position
-    
-    def sub_bytes(position):
+
+    def mix_element_columns(position):
         # Replace this with actual sub_bytes() implementation
         return position
 
@@ -63,7 +63,7 @@ def aes_encryption(image):
             position = shift_element_rows(position)
             position = mix_element_columns(position)
             position = np.logical_xor(position, cipher_key[p])
-        
+
         position = sub_bytes(position)
         position = shift_element_rows(position)
         position = np.logical_xor(position, cipher_key[-1])
@@ -90,7 +90,8 @@ def column_wise_scanning(image):
     return optimized_image
 
 # Example usage
-input_image_path = "Coach.jpg"
+input_image_path = "input_image.jpeg"
+output_image = "compressed_encrypt_image.jpeg"
 output_image_path_1 = "compressed_encrypted_image_aes.jpeg"
 output_image_path_2 = "compressed_encrypted_image_xor.jpeg"
 
