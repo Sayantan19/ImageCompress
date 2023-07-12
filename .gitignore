@@ -1,0 +1,10 @@
+//Environment Folder
+env
+
+//Image files
+*.jpg
+*.png
+*.jpeg
+
+//Intermediate Text files
+*.txt
